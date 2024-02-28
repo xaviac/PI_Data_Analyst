@@ -54,26 +54,26 @@ st.bar_chart(frecuencias, use_container_width=True)
 
 
 # filtrar los datos para eliminar los valores 'SD', 'No Especificada' y '0' y '.' en la columna 'pos x' y 'pos y' y convertirlos a valores flotantes
-hechos_filtrados['pos x'] = hechos_filtrados['pos x'].replace(['SD', 'No Especificada', '0', '.'], np.nan).astype(float)
-hechos_filtrados['pos y'] = hechos_filtrados['pos y'].replace(['SD', 'No Especificada', '0', '.'], np.nan).astype(float)
+# hechos_filtrados['pos x'] = hechos_filtrados['pos x'].replace(['SD', 'No Especificada', '0', '.'], np.nan).astype(float)
+# hechos_filtrados['pos y'] = hechos_filtrados['pos y'].replace(['SD', 'No Especificada', '0', '.'], np.nan).astype(float)
 
-# Eliminar los registros con valores nulos en 'pos x' y 'pos y'
-hechos_filtrados = hechos_filtrados.dropna(subset=['pos x', 'pos y'])
+# # Eliminar los registros con valores nulos en 'pos x' y 'pos y'
+# hechos_filtrados = hechos_filtrados.dropna(subset=['pos x', 'pos y'])
 
-# Crear el mapa interactivo
-st.title('Mapa Interactivo de Lugares')
+# # Crear el mapa interactivo
+# st.title('Mapa Interactivo de Lugares')
 
-# Coordenadas del centro de tu mapa
-latitud_centro = hechos_filtrados['pos y'].mean()
-longitud_centro = hechos_filtrados['pos x'].mean()
+# # Coordenadas del centro de tu mapa
+# latitud_centro = hechos_filtrados['pos y'].mean()
+# longitud_centro = hechos_filtrados['pos x'].mean()
 
-# Crear el mapa centrado en las coordenadas calculadas
-mapa = folium.Map(location=[latitud_centro, longitud_centro], zoom_start=11)
+# # Crear el mapa centrado en las coordenadas calculadas
+# mapa = folium.Map(location=[latitud_centro, longitud_centro], zoom_start=11)
 
-# Añadir marcadores al mapa
-for _, row in hechos_filtrados.iterrows():
-    folium.Marker(location=[row['pos y'], row['pos x']], popup=row['comuna']).add_to(mapa)
+# # Añadir marcadores al mapa
+# for _, row in hechos_filtrados.iterrows():
+#     folium.Marker(location=[row['pos y'], row['pos x']], popup=row['comuna']).add_to(mapa)
 
-# Mostrar el mapa en Streamlit
-st.write('Los marcadores muestran la ubicación de los lugares en el mapa.')
-st.write(mapa)
+# # Mostrar el mapa en Streamlit
+# st.write('Los marcadores muestran la ubicación de los lugares en el mapa.')
+# st.write(mapa)
