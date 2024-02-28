@@ -1,8 +1,10 @@
-pandas
 streamlit
-matplotlib
+pandas
 numpy
-scipy
+matplotlib.pyplot
 seaborn
-plotly
+plotly.express
+plotly.graph_objects
+plotly.subplots
+datetime
 folium
