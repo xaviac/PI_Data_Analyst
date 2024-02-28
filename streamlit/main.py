@@ -16,7 +16,7 @@ st.title('Siniestros viales en la Ciudad de Buenos Aires (CABA)')
 # Load data
 @st.cache_data
 def load_data():
-    data = pd.read_csv('hechos.csv')
+    data = pd.read_csv('https://github.com/xaviac/PI_Data_Analyst/raw/main/data/clean/hechos.csv')
     return data
 
 url = 'https://cdn.buenosaires.gob.ar/datosabiertos/datasets/transporte-y-obras-publicas/victimas-siniestros-viales/homicidios.xlsx'
