@@ -6,7 +6,7 @@ env1/
 env2/
 .venv/
 .venv.bak/
-
+.devcontainer/
 # Python compiled files
 __pycache__/
 *.pyc
