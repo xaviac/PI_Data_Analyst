@@ -77,3 +77,12 @@ st.bar_chart(frecuencias, use_container_width=True)
 # # Mostrar el mapa en Streamlit
 # st.write('Los marcadores muestran la ubicación de los lugares en el mapa.')
 # st.write(mapa)
+
+
+# Asegúrate de que 'h_hechos' es tu DataFrame y tiene las columnas 'longitud' y 'latitud'
+# h_hechos = pd.read_csv('tu_archivo.csv')
+
+st.title('Mi mapa')
+
+# Añade un mapa con los puntos de 'h_hechos'
+st.map(hechos)

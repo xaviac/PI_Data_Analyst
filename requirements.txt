@@ -6,3 +6,4 @@ seaborn
 plotly
 datetime
 folium
+openpyxl
