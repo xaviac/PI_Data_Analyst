@@ -85,4 +85,8 @@ st.bar_chart(frecuencias, use_container_width=True)
 st.title('Mi mapa')
 
 # Añade un mapa con los puntos de 'h_hechos'
+# Añade un mapa con los puntos de 'h_hechos'
+hechos = hechos.dropna(subset=['lat'])
 st.map(hechos)
+
+# st.map(hechos)
