@@ -86,7 +86,8 @@ st.title('Mi mapa')
 
 # Añade un mapa con los puntos de 'h_hechos'
 # Añade un mapa con los puntos de 'h_hechos'
-hechos = hechos.dropna(subset=['lat'])
-st.map(hechos)
+hechos = hechos.dropna(subset=['lat', 'lon'])
+hechos['lat'] = hechos['lat'].astype(float)
+hechos['lon'] = hechos['lon'].astype(float)
 
-# st.map(hechos)
+st.map(hechos)
