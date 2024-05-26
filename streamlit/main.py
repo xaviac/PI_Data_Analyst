@@ -86,8 +86,11 @@ st.title('Mi mapa')
 
 # Añade un mapa con los puntos de 'h_hechos'
 # Añade un mapa con los puntos de 'h_hechos'
+# Eliminar nulos y el valor 'SD' de 'lat' y 'lon' para convertir en flotante en hechos
+hechos = hechos.replace('SD', np.nan)
+hechos[['lat', 'lon']] = hechos[['lat', 'lon']].apply(pd.to_numeric, errors='coerce')
 hechos = hechos.dropna(subset=['lat', 'lon'])
 hechos['lat'] = hechos['lat'].astype(float)
 hechos['lon'] = hechos['lon'].astype(float)
-
+# Crear el mapa
 st.map(hechos)
